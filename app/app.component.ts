@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { KegListComponent } from './keg-list.component';
+import { NewKegComponent } from './new-keg.component';
 import { Keg } from './keg.model';
 
 // @Component({
@@ -42,11 +43,14 @@ import { Keg } from './keg.model';
 
 @Component({
   selector: 'my-app',
-  //directives: [KegListComponent],
+  directives: [KegListComponent, NewKegComponent],
   template: `
     <div class="container">
       <h1>Tap Room</h1>
-      <keg-display *ngFor="#keg of kegs"><li>{{ keg.name }},{{ keg.brand }}, {{ keg.price}}, {{ keg.alcohol}}</li></keg-display>
+      <keg-list
+      [kegList]="kegs"
+      (onKegSelect)="kegWasSelected($event)">
+      </keg-list>
     </div>
   `
 })
