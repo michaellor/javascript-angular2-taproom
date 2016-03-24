@@ -4,7 +4,6 @@ import { NewKegComponent } from './new-keg.component';
 import { Keg } from './keg.model';
 import { EditKegDetailsComponent } from './edit-keg-details.component';
 
-
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
@@ -16,7 +15,7 @@ import { EditKegDetailsComponent } from './edit-keg-details.component';
       [class.selected]="currentKeg === selectedKeg"
       [keg]="currentKeg">
     </keg-display>
-    <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
+    <div class="container"><new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg></div>
     <div class="container"><edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg"></edit-keg-details></div>
   `
 })
