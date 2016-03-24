@@ -24,6 +24,7 @@ import { AlcoholPipe } from './alcohol.pipe';
     </keg-display>
     <div class="container"><new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg></div>
     <div class="container"><edit-keg-details *ngIf="selectedKeg" [keg]="selectedKeg"></edit-keg-details></div>
+    
   `
 })
 export class KegListComponent {
@@ -40,11 +41,17 @@ export class KegListComponent {
     this.onKegSelect.emit(clickedKeg);
   }
   createKeg(kegArray: string[]): void {
-    this.kegList.push(
-      new Keg(kegArray[0], kegArray[1], Number(kegArray[2]), Number(kegArray[3]), this.kegList.length)
-    );
+    // creating error alert to show alert the user to include data
+    if (!name) {
+      alert("Please enter a name");
+    } else {
+      this.kegList.push(
+        new Keg(kegArray[0], kegArray[1], Number(kegArray[2]), Number(kegArray[3]), this.kegList.length)
+      );
+    }
   }
   alcoholChange(filterOption) {
     this.filterAlcohol = filterOption;
   }
+
 }
