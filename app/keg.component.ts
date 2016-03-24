@@ -7,9 +7,16 @@ import { PourComponent } from './pour.component';
   inputs: ['keg'],
   directives: [PourComponent],
   template: `
-    <div>
-      <label>{{ keg.name }}, {{ keg.brand }}, {{ keg.price }}, {{ keg.alcohol }}</label>
+    <div class="container">
+      <div>
+        <h3>Name: {{ keg.name }}</h3>
+        <h4>Brand: {{ keg.brand }}</h4>
+        <p>Price: $ {{ keg.price }}</p>
+        <p>Alochol Content: {{ keg.alcohol }} %</p>
+        <p>Amount of alcohol left: {{ keg.pours }}
+      </div>
       <keg-pour *ngIf="keg.pours > 0" [pourKeg]="keg"></keg-pour>
+
     </div>
   `
 })
