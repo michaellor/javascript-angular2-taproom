@@ -1,3 +1,22 @@
 h1 {
-  color: blue;
+  color: white;
+}
+
+body {
+  background-color: grey;
+}
+
+.keg-form {
+  background-color: tan;
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+
+.edit-form {
+  background-color: green;
+  border-radius: 30px;
+  padding: 40px;
+  margin-top: 20px;
+
 }

@@ -13,7 +13,6 @@ import { Keg } from './keg.model';
       [kegList]="kegs"
       (onKegSelect)="kegWasSelected($event)">
       </keg-list>
-
     </div>
   `
 })
