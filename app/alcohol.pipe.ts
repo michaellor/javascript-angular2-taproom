@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from 'angular2/core';
+import { Pipe, PipeTransform } from 'angular2/core';
 import { Keg } from './keg.model';
 
 @Pipe ({
@@ -9,6 +9,20 @@ import { Keg } from './keg.model';
 export class AlcoholPipe implements PipeTransform {
   transform(input: Keg[], args) {
     var desiredAlcoholLevel = args[0];
-    if (desiredAlcoholLevel > 10) {}
+    if (desiredAlcoholLevel  === "strong") {
+        return input.filter((keg) => {
+        if (keg.alcohol > 10) {
+          return true;
+        }
+      });
+    } else if (desiredAlcoholLevel === "notStrong") {
+        return input.filter((keg) => {
+          if(keg.alcohol < 10) {
+            return true;
+          }
+        });
+      } else {
+        return input;
+      }
+    }
   }
-}
