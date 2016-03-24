@@ -24,3 +24,19 @@ body {
 .keg-color-default {
 
 }
+
+.pink {
+  color: #FF66CC;
+  border-radius: 30px;
+
+}
+
+.green {
+  color: 	#669966;
+  border-radius: 30px;
+}
+
+.red {
+  color: 	#600000;
+  border-radius: 30px;
+}
